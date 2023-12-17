@@ -37,7 +37,6 @@ public class MainFormController {
     @FXML
     private Label lblDescription;
 
-
     /**
      * Initializes the controller class.
      */
