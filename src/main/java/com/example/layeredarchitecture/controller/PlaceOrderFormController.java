@@ -51,6 +51,7 @@ public class PlaceOrderFormController {
     public Label lblTotal;
     private String orderId;
 
+
     OrderDAO orderDAO = new OrderDAOImpl();
     CustomerDAO customerDAO = new CustomerDAOImpl();
     ItemDAO itemDAO = new ItemDAOImpl();
