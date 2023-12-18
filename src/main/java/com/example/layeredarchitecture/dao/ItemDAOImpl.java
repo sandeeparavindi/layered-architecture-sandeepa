@@ -45,6 +45,7 @@ public class ItemDAOImpl implements ItemDAO{
         PreparedStatement pstm = connection.prepareStatement("DELETE FROM Item WHERE code=?");
         pstm.setString(1, code);
         pstm.executeUpdate();
+
     }
 
     @Override
