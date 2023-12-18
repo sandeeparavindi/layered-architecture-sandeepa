@@ -61,7 +61,7 @@ public class OrderDAOImpl implements OrderDAO{
                 }
 
 //                //Search & Update Item
-                ItemDTO item = itemDAO.findItem(detail.getItemCode());
+                ItemDTO item = itemDAO.find(detail.getItemCode());
                 item.setQtyOnHand(item.getQtyOnHand() - detail.getQty());
 
                 PreparedStatement pstm = connection.prepareStatement("UPDATE Item SET description=?, unitPrice=?, qtyOnHand=? WHERE code=?");

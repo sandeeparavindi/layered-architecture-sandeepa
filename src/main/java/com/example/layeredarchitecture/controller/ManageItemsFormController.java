@@ -75,7 +75,7 @@ public class ManageItemsFormController {
         try {
             /*Get all items*/
 
-            ArrayList<ItemDTO> allItem = itemDAO.loadAllItem();
+            ArrayList<ItemDTO> allItem = itemDAO.getAll();
             for (ItemDTO dto: allItem) {
                 tblItems.getItems().add(new ItemTM(dto.getCode(),dto.getDescription(), dto.getUnitPrice(), dto.getQtyOnHand()));
 
@@ -137,7 +137,7 @@ public class ManageItemsFormController {
             }
 
             ItemDTO itemDTO = new ItemDTO();
-             itemDAO.deleteItem(code);
+             itemDAO.delete(code);
 
             tblItems.getItems().remove(tblItems.getSelectionModel().getSelectedItem());
             tblItems.getSelectionModel().clearSelection();
@@ -178,7 +178,7 @@ public class ManageItemsFormController {
                 }
                 //Save Item
 
-                boolean isSaved = itemDAO.saveItem(new ItemDTO(code,description,unitPrice,qtyOnHand));
+                boolean isSaved = itemDAO.save(new ItemDTO(code,description,unitPrice,qtyOnHand));
                if(isSaved){
 
                 tblItems.getItems().add(new ItemTM(code, description, unitPrice, qtyOnHand));}
@@ -199,7 +199,7 @@ public class ManageItemsFormController {
 
                 ItemDTO itemDTO = new ItemDTO();
                 ItemDAO itemDAO = new ItemDAOImpl();
-                itemDAO.updateItem(itemDTO);
+                itemDAO.update(itemDTO);
 
                 ItemTM selectedItem = tblItems.getSelectionModel().getSelectedItem();
                 selectedItem.setDescription(description);
@@ -217,7 +217,7 @@ public class ManageItemsFormController {
     }
 
     private boolean existItem(String code) throws SQLException, ClassNotFoundException {
-        return itemDAO.existItem(code);
+        return itemDAO.exist(code);
 
     }
 
