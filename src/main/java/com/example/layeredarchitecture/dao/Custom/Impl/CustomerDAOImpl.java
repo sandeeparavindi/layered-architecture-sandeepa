@@ -1,6 +1,7 @@
-package com.example.layeredarchitecture.dao;
+package com.example.layeredarchitecture.dao.Custom.Impl;
 
-import com.example.layeredarchitecture.db.DBConnection;
+import com.example.layeredarchitecture.dao.Custom.CustomerDAO;
+import com.example.layeredarchitecture.dao.SQLUtil;
 import com.example.layeredarchitecture.model.CustomerDTO;
 
 import java.sql.*;
@@ -29,8 +30,8 @@ public class CustomerDAOImpl implements CustomerDAO {
         }
 
         @Override
-        public void update(CustomerDTO dto) throws SQLException, ClassNotFoundException {
-            SQLUtil.execute("UPDATE Customer SET name=?, address=? WHERE id=?",dto.getName(),dto.getAddress(),dto.getId());
+        public boolean update(CustomerDTO dto) throws SQLException, ClassNotFoundException {
+            return SQLUtil.execute("UPDATE Customer SET name=?, address=? WHERE id=?",dto.getName(),dto.getAddress(),dto.getId());
         }
 
        @Override

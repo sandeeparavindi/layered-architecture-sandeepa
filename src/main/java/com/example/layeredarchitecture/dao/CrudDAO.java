@@ -10,7 +10,7 @@ public interface CrudDAO<T>{
 
     boolean save(T dto) throws SQLException, ClassNotFoundException;
 
-    void update(T dto) throws SQLException, ClassNotFoundException;
+    boolean update(T dto) throws SQLException, ClassNotFoundException;
 
     boolean exist(String id) throws SQLException, ClassNotFoundException;
 
