@@ -7,17 +7,17 @@ import java.util.ArrayList;
 
 public interface ItemBO {
 
-    ArrayList<ItemDTO> getAll() throws SQLException, ClassNotFoundException;
+    ArrayList<ItemDTO> getAllItem() throws SQLException, ClassNotFoundException;
 
-    boolean save(ItemDTO dto) throws SQLException, ClassNotFoundException;
+    boolean saveItem(ItemDTO dto) throws SQLException, ClassNotFoundException;
 
-    void delete(String code) throws SQLException, ClassNotFoundException;
+    void deleteItem(String code) throws SQLException, ClassNotFoundException;
 
-    boolean update(ItemDTO dto) throws SQLException, ClassNotFoundException;
+    boolean updateItem(ItemDTO dto) throws SQLException, ClassNotFoundException;
 
-    boolean exist (String code) throws SQLException, ClassNotFoundException;
+    boolean existItem (String code) throws SQLException, ClassNotFoundException;
 
-    String genarateId() throws SQLException, ClassNotFoundException;
+    String genarateItemId() throws SQLException, ClassNotFoundException;
 
-    ItemDTO find(String code) throws SQLException, ClassNotFoundException;
+    ItemDTO findItem(String code) throws SQLException, ClassNotFoundException;
 }

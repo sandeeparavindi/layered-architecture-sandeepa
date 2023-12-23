@@ -72,7 +72,7 @@ public class ManageCustomersFormController {
         tblCustomers.getItems().clear();
         /*Get all customers*/
         try {
-            ArrayList<CustomerDTO> allCustomer = customerBO.getAll();
+            ArrayList<CustomerDTO> allCustomer = customerBO.getAllCustomer();
 
             for (CustomerDTO dto : allCustomer) {
                 tblCustomers.getItems().add(new CustomerTM(dto.getId(), dto.getName(), dto.getAddress()));
@@ -147,7 +147,7 @@ public class ManageCustomersFormController {
                 }
 
 
-                boolean isSaved = customerBO.save(new CustomerDTO(id, name, address));
+                boolean isSaved = customerBO.saveCustomer(new CustomerDTO(id, name, address));
 
                 if (isSaved) {
                     tblCustomers.getItems().add(new CustomerTM(id, name, address));
@@ -167,7 +167,7 @@ public class ManageCustomersFormController {
                     new Alert(Alert.AlertType.ERROR, "There is no such customer associated with the id " + id).show();
                 }
                 CustomerDTO customerDTO = new CustomerDTO();
-                customerBO.update(new CustomerDTO(id, name, address));
+                customerBO.updateCustomer(new CustomerDTO(id, name, address));
 
 
             } catch (SQLException e) {
@@ -187,7 +187,7 @@ public class ManageCustomersFormController {
 
 
     boolean existCustomer(String id) throws SQLException, ClassNotFoundException {
-        return customerBO.exist(id);
+        return customerBO.existCustomer(id);
 
 
     }
@@ -201,7 +201,7 @@ public class ManageCustomersFormController {
                 new Alert(Alert.AlertType.ERROR, "There is no such customer associated with the id " + id).show();
             }
 
-            customerBO.delete(id);
+            customerBO.deleteCustomer(id);
 
             tblCustomers.getItems().remove(tblCustomers.getSelectionModel().getSelectedItem());
             tblCustomers.getSelectionModel().clearSelection();
@@ -216,7 +216,7 @@ public class ManageCustomersFormController {
 
     private String generateNewId() {
         try {
-            return customerBO.genarateId();
+            return customerBO.genarateCustomerId();
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, "Failed to generate a new id " + e.getMessage()).show();
         } catch (ClassNotFoundException e) {

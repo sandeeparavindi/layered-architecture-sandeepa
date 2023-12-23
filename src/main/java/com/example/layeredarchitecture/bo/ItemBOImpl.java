@@ -12,37 +12,37 @@ public class ItemBOImpl implements ItemBO{
     ItemDAO itemDAO = new ItemDAOImpl();
 
     @Override
-    public ArrayList<ItemDTO> getAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<ItemDTO> getAllItem() throws SQLException, ClassNotFoundException {
         return itemDAO.getAll();
     }
 
     @Override
-    public boolean save(ItemDTO dto) throws SQLException, ClassNotFoundException {
+    public boolean saveItem(ItemDTO dto) throws SQLException, ClassNotFoundException {
         return itemDAO.save(dto);
     }
 
     @Override
-    public void delete(String code) throws SQLException, ClassNotFoundException {
+    public void deleteItem(String code) throws SQLException, ClassNotFoundException {
         itemDAO.delete(code);
     }
 
     @Override
-    public boolean update(ItemDTO dto) throws SQLException, ClassNotFoundException {
+    public boolean updateItem(ItemDTO dto) throws SQLException, ClassNotFoundException {
         return itemDAO.update(dto);
     }
 
     @Override
-    public boolean exist(String code) throws SQLException, ClassNotFoundException {
+    public boolean existItem(String code) throws SQLException, ClassNotFoundException {
         return itemDAO.exist(code);
     }
 
     @Override
-    public String genarateId() throws SQLException, ClassNotFoundException {
+    public String genarateItemId() throws SQLException, ClassNotFoundException {
         return itemDAO.genarateId();
     }
 
     @Override
-    public ItemDTO find(String code) throws SQLException, ClassNotFoundException {
+    public ItemDTO findItem(String code) throws SQLException, ClassNotFoundException {
         return itemDAO.find(code);
     }
 

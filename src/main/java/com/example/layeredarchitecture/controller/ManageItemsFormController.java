@@ -76,7 +76,7 @@ public class ManageItemsFormController {
         try {
             /*Get all items*/
 
-            ArrayList<ItemDTO> allItem = itemBO.getAll();
+            ArrayList<ItemDTO> allItem = itemBO.getAllItem();
             for (ItemDTO dto: allItem) {
                 tblItems.getItems().add(new ItemTM(dto.getCode(),dto.getDescription(), dto.getUnitPrice(), dto.getQtyOnHand()));
 
@@ -138,7 +138,7 @@ public class ManageItemsFormController {
             }
 
             ItemDTO itemDTO = new ItemDTO();
-             itemBO.delete(code);
+             itemBO.deleteItem(code);
 
             tblItems.getItems().remove(tblItems.getSelectionModel().getSelectedItem());
             tblItems.getSelectionModel().clearSelection();
@@ -179,7 +179,7 @@ public class ManageItemsFormController {
                 }
                 //Save Item
 
-                boolean isSaved = itemBO.save(new ItemDTO(code,description,unitPrice,qtyOnHand));
+                boolean isSaved = itemBO.saveItem(new ItemDTO(code,description,unitPrice,qtyOnHand));
                if(isSaved){
 
                 tblItems.getItems().add(new ItemTM(code, description, unitPrice, qtyOnHand));}
@@ -218,13 +218,13 @@ public class ManageItemsFormController {
     }
 
     private boolean existItem(String code) throws SQLException, ClassNotFoundException {
-        return itemBO.exist(code);
+        return itemBO.existItem(code);
 
     }
 
     private String generateNewId() {
         try {
-            return itemBO.genarateId();
+            return itemBO.genarateItemId();
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         } catch (ClassNotFoundException e) {
