@@ -1,7 +1,7 @@
 package com.example.layeredarchitecture.dao.Custom.Impl;
 
 import com.example.layeredarchitecture.dao.Custom.QueryDAO;
-import com.example.layeredarchitecture.model.CustomerDTO;
+import com.example.layeredarchitecture.dto.CustomerDTO;
 
 public class QueryDAOImpl implements QueryDAO {
 

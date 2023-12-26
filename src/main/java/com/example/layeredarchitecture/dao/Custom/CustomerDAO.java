@@ -1,11 +1,7 @@
 package com.example.layeredarchitecture.dao.Custom;
 
 import com.example.layeredarchitecture.dao.CrudDAO;
-import com.example.layeredarchitecture.db.DBConnection;
-import com.example.layeredarchitecture.model.CustomerDTO;
-
-import java.sql.*;
-import java.util.ArrayList;
+import com.example.layeredarchitecture.dto.CustomerDTO;
 
 public interface CustomerDAO extends CrudDAO<CustomerDTO> {
 }

@@ -1,10 +1,10 @@
 package com.example.layeredarchitecture.controller;
 
-import com.example.layeredarchitecture.bo.ItemBO;
-import com.example.layeredarchitecture.bo.ItemBOImpl;
+import com.example.layeredarchitecture.bo.Custom.ItemBO;
+import com.example.layeredarchitecture.bo.Custom.Impl.ItemBOImpl;
 import com.example.layeredarchitecture.dao.Custom.ItemDAO;
 import com.example.layeredarchitecture.dao.Custom.Impl.ItemDAOImpl;
-import com.example.layeredarchitecture.model.ItemDTO;
+import com.example.layeredarchitecture.dto.ItemDTO;
 import com.example.layeredarchitecture.view.tdm.ItemTM;
 import com.jfoenix.controls.JFXButton;
 import javafx.application.Platform;

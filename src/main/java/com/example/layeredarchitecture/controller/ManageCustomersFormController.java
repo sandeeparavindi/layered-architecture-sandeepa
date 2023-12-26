@@ -1,10 +1,8 @@
 package com.example.layeredarchitecture.controller;
 
-import com.example.layeredarchitecture.bo.CustomerBO;
-import com.example.layeredarchitecture.bo.CustomerBOImpl;
-import com.example.layeredarchitecture.dao.Custom.CustomerDAO;
-import com.example.layeredarchitecture.dao.Custom.Impl.CustomerDAOImpl;
-import com.example.layeredarchitecture.model.CustomerDTO;
+import com.example.layeredarchitecture.bo.Custom.CustomerBO;
+import com.example.layeredarchitecture.bo.Custom.Impl.CustomerBOImpl;
+import com.example.layeredarchitecture.dto.CustomerDTO;
 import com.example.layeredarchitecture.view.tdm.CustomerTM;
 import com.jfoenix.controls.JFXButton;
 import javafx.application.Platform;
